@@ -18,19 +18,19 @@ stages:
   - job: SecondJob
     steps:
       - bash: echo Second Job
--stage: DevDeploy
+- stage: DevDeploy
   jobs:
   - job: DevDeployJob
     steps:
     - bash: echo DevDeploy job
 
--stage: QADeploy
+- stage: QADeploy
   jobs:
   - job: QADeployJob
     steps:
     - bash: echo QADeploy job
 
--stage: ProdDeploy
+- stage: ProdDeploy
   jobs:
   - job: ProdJob
     steps:
