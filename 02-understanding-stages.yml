@@ -16,6 +16,12 @@ stages:
     steps:
     - bash: echo Build First job
     - bash: echo $(PiplineLevelVariable)
+    - bash: echo $(Build.BuildNumber)
+    - bash: echo $(Build.BuildId)
+    - bash: echo $(Build.SourceBranchNumber)
+    - bash: echo $(Build.SourcesDirectory)
+    - bash: echo $(System.DefaultWorkingDirectory)
+    - bash: ls -R $(System.ArtificialStagingDirectory)
   - job: SecondJob
     steps:
       - bash: echo Second Job
