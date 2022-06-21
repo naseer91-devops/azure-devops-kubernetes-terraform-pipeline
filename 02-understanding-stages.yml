@@ -22,30 +22,30 @@ stages:
     - bash: echo $(Build.SourcesDirectory)
     - bash: echo $(System.DefaultWorkingDirectory)
     - bash: ls -R $(System.ArtificialStagingDirectory)
-  - job: SecondJob
-    steps:
-      - bash: echo Second Job
-- stage: DevDeploy
-  variables: 
-    environment: Dev
-  dependsOn: Build
-  jobs:
-  - job: DevDeployJob
-    steps:
-    - bash: echo $(environment)DevDeployJob
-- stage: QADeploy
-  dependsOn: Build
-  jobs:
-  - job: QADeployJob
-    steps:
-    - bash: echo QADeploy job
+#  - job: SecondJob
+#    steps:
+#      - bash: echo Second Job
+#- stage: DevDeploy
+#  variables: 
+#    environment: Dev
+#  dependsOn: Build
+#  jobs:
+#  - job: DevDeployJob
+#    steps:
+#    - bash: echo $(environment)DevDeployJob
+#- stage: QADeploy
+#  dependsOn: Build
+#  jobs:
+#  - job: QADeployJob
+#    steps:
+#    - bash: echo QADeploy job
 
-- stage: ProdDeploy
-  dependsOn: 
-  - DevDeploy
-  - QADeploy
-  jobs:
-  - job: ProdJob
-    steps:
-    - bash: echo ProdDeploy job
+#- stage: ProdDeploy
+#  dependsOn: 
+#  - DevDeploy
+#  - QADeploy
+#  jobs:
+#  - job: ProdJob
+#    steps:
+#    - bash: echo ProdDeploy job
 
