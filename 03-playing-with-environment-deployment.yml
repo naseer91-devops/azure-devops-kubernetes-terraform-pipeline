@@ -33,7 +33,7 @@ stages:
            - script: echo deploy to Dev
 - stage: QADeploy
   jobs:
-  - deployment: DevDeployment
+  - deployment: QADeployment
     environment: QA
     strategy:
       runOnce:
