@@ -20,7 +20,7 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'azurelearner'
-        repository: 'azuredevopslearner-currencyexchange-in28minutes'
+        repository: 'naseer91devops/azuredevopslearner-currencyexchange-in28minutes'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
